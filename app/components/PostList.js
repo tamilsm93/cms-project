@@ -31,8 +31,8 @@ export default function Posts() {
     {posts.length > 0 && (
     posts.map((post) => (
       <div className="col-span-1 bg-gray-200 pg-4" key={post.id} style={{ marginTop: '15px' , padding: '10px' }}>
-      <h2 class="text-4x1 font-extrabold text-gray-900 mb-8">  {post.title} </h2>
-      <p class="text-base text-gray-800 font-semibold my-4">{post.content} </p> <br />
+      <h2 className="text-4x1 font-extrabold text-gray-900 mb-8">  {post.title} </h2>
+      <p className="text-base text-gray-800 font-semibold my-4">{post.content} </p> <br />
           <a href={`/posts/${post.id}`} class="text-blue-500 hover:text-blue-700"> view  </a>
           </div>
         ))

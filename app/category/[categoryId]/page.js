@@ -15,10 +15,6 @@ const Posts = () => {
         return;
       }
       const response = await fetch(`http://localhost:3000/api/posts?category_id=${categoryId}`);
-      
-      if (!response.ok) {
-        throw new Error('Failed to fetch post data');
-      }
       const postData = await response.json();
       setPosts(postData);
     } catch (error) {
@@ -31,12 +27,11 @@ const Posts = () => {
   }, [id]);
   return (
     <div className="max-w-2x1 mx-auto bg-white shadow-md rounded-lg overflow-hidden p-6" style={{marginLeft: '200px', marginTop: '50px', padding: '10px', width: '60rem'}}>
-    <p class="text-gray-600 mb-4">Posts</p>
-    { posts && posts.length > 0 ?  (posts.map((post, index) => (
-      
+    <p className="text-gray-600 mb-4">Posts</p>
+    { posts && posts.length > 0 ?  (posts.map((post) => (
       <div style={{marginLeft: '20px', marginTop: '25px'}}>
-      <h2 class="text-x1 font-semibold text-grey-800 mb-4"> {post.title}</h2>
-      <p class="text-gray-700 leading-relaxed mb-4">{post.content}</p>
+      <h2 className="text-x1 font-semibold text-grey-800 mb-4"> {post.title}</h2>
+      <p className="text-gray-700 leading-relaxed mb-4">{post.content}</p>
     </div>
       )) 
     ) : (
